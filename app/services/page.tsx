@@ -10,45 +10,40 @@ const services = [
   {
     category: 'Layanan Rambut',
     items: [
-      { name: 'Potong & Styling Rambut', price: 'Rp 75.000 - 150.000' },
-      { name: 'Smooting / Rebonding', price: 'Rp 300.000 - 500.000' },
-      { name: 'Pewarnaan Rambut (Cat Biasa)', price: 'Rp 150.000 - 300.000' },
-      { name: 'Ombre / Highlight', price: 'Rp 250.000 - 450.000' },
-      { name: 'Creambath & Hair Spa', price: 'Rp 100.000 - 200.000' },
-      { name: 'Keratin Treatment', price: 'Rp 400.000 - 600.000' },
+      { name: 'Potong & Styling Rambut', price: 'Rp 15.000 - 30.000' },
+      { name: 'Smooting / Rebonding', price: 'Rp 150.000 - 500.000' },
+      { name: 'Pewarnaan Rambut (Cat Biasa)', price: 'Rp 50.000 - 100.000' },
+      { name: 'Ombre / Highlight', price: 'Rp 100.000 - 200.000' },
+      { name: 'Creambath & Hair Spa', price: 'Rp 50.000 - 100.000' },
     ],
   },
   {
     category: 'Layanan Makeup & Riasan',
     items: [
-      { name: 'Rias Pengantin Lengkap', price: 'Rp 1.000.000 - 2.000.000' },
-      { name: 'Makeup & Hairdo Wisuda', price: 'Rp 350.000 - 600.000' },
+      { name: 'Rias Pengantin Lengkap', price: 'Rp 2.000.000 - 4.000.000' },
+      { name: 'Makeup & Hairdo Wisuda', price: 'Rp 200.000 - 500.000' },
       { name: 'Makeup Pesta / Casual', price: 'Rp 200.000 - 400.000' },
-      { name: 'Makeup Profesional (Per Jam)', price: 'Rp 500.000/jam' },
-      { name: 'MUA Panggilan (On-site)', price: 'Hubungi untuk penawaran' },
+      { name: 'MUA Panggilan (Datang ke Lokasi)', price: 'Hubungi untuk penawaran' },
     ],
   },
   {
     category: 'Layanan Kuku & Tangan',
     items: [
-      { name: 'Manicure Biasa', price: 'Rp 50.000 - 100.000' },
       { name: 'Manicure + Nail Art', price: 'Rp 100.000 - 200.000' },
-      { name: 'Pedicure Biasa', price: 'Rp 75.000 - 125.000' },
-      { name: 'Pedicure + Nail Art', price: 'Rp 125.000 - 250.000' },
-      { name: 'Gel Nails (Gelish)', price: 'Rp 150.000 - 300.000' },
     ],
   },
   {
-    category: 'Produk Penjualan',
+    category: 'Produk yang Dijual',
     items: [
       { name: 'Aksesori Rambut', price: 'Rp 25.000 - 150.000' },
-      { name: 'Produk Kosmetik', price: 'Rp 50.000 - 500.000' },
-      { name: 'Vitamin Rambut & Wajah', price: 'Rp 75.000 - 300.000' },
-      { name: 'Body Lotion & Parfum', price: 'Rp 100.000 - 400.000' },
-      { name: 'Perawatan Rambut (Shampoo/Conditioner)', price: 'Rp 50.000 - 250.000' },
+      { name: 'Produk Kosmetik', price: 'Rp 50.000 - 100.000' },
+      { name: 'Vitamin Rambut & Wajah', price: 'Rp 50.000 - 200.000' },
+      { name: 'Body Lotion & Parfum', price: 'Rp 30.000 - 100.000' },
+      { name: 'Produk Perawatan Rambut (Shampoo / Conditioner)', price: 'Rp 50.000 - 100.000' },
     ],
   },
 ]
+
 
 export default function ServicesPage() {
   return (
