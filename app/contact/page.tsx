@@ -87,7 +87,7 @@ export default function ContactPage() {
                 <CardContent className="space-y-4">
                   <p className="text-foreground font-semibold">{address}</p>
                   <p className="text-muted-foreground text-sm">
-                   Terpercaya.
+                    Kunjungi salon kami dan jadilah cantik.
                   </p>
                   <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
