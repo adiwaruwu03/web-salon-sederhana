@@ -7,8 +7,8 @@ import { Card, CardContent } from '@/components/ui/card'
 const albums = [
   {
     src: '/album/Programer.jpg',
-    title: 'owner ',
-    desc: 'Adi Waruwu',
+    title: 'Adi Waruwu',
+    
   },
   {
     src: '/album/founder.jpg',
