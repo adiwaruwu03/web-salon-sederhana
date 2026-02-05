@@ -13,6 +13,8 @@ export function Header() {
     { label: 'Layanan', href: '/services' },
     { label: 'Booking', href: '/booking' },
     { label: 'Kontak', href: '/contact' },
+    { label: 'Album', href: '/album' },
+
   ]
 
   return (

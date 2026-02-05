@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "IMELDA SALON",
   description:
-    "IMELDA SALON menawarkan layanan salon profesional, makeup artistik, dan produk kecantikan berkualitas tinggi dengan standar internasional.",
+    "Imelda Salon adalah salon kecantikan profesional di Garoga, Tapanuli Utara yang menyediakan layanan perawatan rambut, makeup artist (MUA), rias pengantin, hair styling, dan kecantikan wanita. Melayani pelanggan dari Tarutung, Garoga, dan sekitarnya dengan hasil riasan elegan, pelayanan ramah, serta harga terjangkau untuk setiap momen spesial Anda.",
 
   generator: "v0.app",
 

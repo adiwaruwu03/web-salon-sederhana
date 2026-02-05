@@ -74,10 +74,7 @@ export function Footer() {
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-              Chat WhatsApp
-            </Button>
+          >          
           </a>
         </div>
       </div>

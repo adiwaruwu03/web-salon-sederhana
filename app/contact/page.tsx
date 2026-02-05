@@ -177,11 +177,6 @@ export default function ContactPage() {
           <p className="text-lg text-primary-foreground/90">
             Hubungi kami hari ini dan dapatkan konsultasi gratis untuk layanan Anda
           </p>
-          <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8 py-2 h-auto text-base">
-              Chat WhatsApp Sekarang
-            </Button>
-          </a>
         </div>
       </section>
 
