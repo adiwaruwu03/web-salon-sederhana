@@ -74,11 +74,11 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4 animate-fade-up animation-delay-600">
             <div className="flex items-center gap-2 group">
               <div className="h-2 w-2 rounded-full bg-green-500 group-hover:scale-125 transition-transform" />
-              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">500+ Client Puas</span>
+              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors"> Client Puas</span>
             </div>
             <div className="flex items-center gap-2 group">
               <div className="h-2 w-2 rounded-full bg-green-500 group-hover:scale-125 transition-transform" />
-              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">10+ Stylist Profesional</span>
+              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Stylist Profesional</span>
             </div>
             <div className="flex items-center gap-2 group">
               <div className="h-2 w-2 rounded-full bg-green-500 group-hover:scale-125 transition-transform" />

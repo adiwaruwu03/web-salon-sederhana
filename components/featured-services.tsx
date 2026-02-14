@@ -97,7 +97,7 @@ export function FeaturedServices() {
             <div className="absolute bottom-4 right-4 bg-primary/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-xl transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 z-30">
               <div className="flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 fill-white" />
-                <span className="text-xs font-semibold">10+ Tahun Pengalaman</span>
+                <span className="text-xs font-semibold">5 Tahun Pengalaman</span>
               </div>
             </div>
           </div>
@@ -110,9 +110,9 @@ export function FeaturedServices() {
             </div>
 
             <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Owner & Founder
+              Owner
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80 mt-2">
-                Ibu Imelda
+                Melda Pasaribu
               </span>
             </h3>
 
@@ -142,7 +142,7 @@ export function FeaturedServices() {
                   <p className="italic text-foreground/80">
                     Kecantikan sejati adalah ketika seseorang merasa percaya diri dengan dirinya sendiri.
                   </p>
-                  <p className="text-sm font-medium text-primary mt-2">— Ibu Imelda</p>
+                  <p className="text-sm font-medium text-primary mt-2">— Melda Pasaribu</p>
                 </div>
               </div>
             </div>

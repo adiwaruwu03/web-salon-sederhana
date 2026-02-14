@@ -202,45 +202,7 @@ export default function LayananPage() {
         </div>
 
         {/* CTA SECTION */}
-        <div className="mt-20 relative isolate overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-primary/90 py-12 px-6 lg:px-12">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-0 left-0 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-            <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
-          </div>
-          
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
-                Ingin tahu detail harga & paket?
-              </h3>
-              <p className="text-white/90 text-lg">
-                Klik tombol di samping untuk lihat detail lengkap setiap layanan
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-lg"
-                >
-                  <span>📞</span>
-                  <span className="ml-2">Konsultasi Gratis</span>
-                </Button>
-              </Link>
-              <Link href="/booking">
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="w-full sm:w-auto bg-transparent text-white border-white/30 hover:bg-white/10 hover:text-white"
-                >
-                  <span>📅</span>
-                  <span className="ml-2">Booking Sekarang</span>
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
+
 
         {/* BREADCRUMB */}
         <div className="mt-12 text-sm text-muted-foreground">
