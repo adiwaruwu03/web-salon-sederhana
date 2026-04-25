@@ -42,11 +42,11 @@ export function Header() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center">
+        <div className="flex items-center justify-between">
           
-          {/* Left: Logo */}
-          <Link href="/" className="flex items-center group justify-self-start">
-            <div className="relative w-10 h-10 transition-transform duration-500 group-hover:scale-110">
+          {/* Left: Logo & Brand */}
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-9 h-9 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110">
               <Image 
                 src="/apple-icon.png" 
                 alt="Imelda Salon Logo" 
@@ -55,17 +55,17 @@ export function Header() {
                 priority
               />
             </div>
-            <div className="ml-3 hidden sm:flex flex-col">
-              <span className="text-lg font-serif font-bold tracking-tight text-foreground leading-none">
+            <div className="ml-2 md:ml-3 flex flex-col">
+              <span className="text-sm md:text-lg font-serif font-bold tracking-tight text-foreground leading-none">
                 IMELDA
               </span>
-              <span className="text-[9px] font-sans font-black tracking-[0.3em] text-primary uppercase leading-none mt-1">
+              <span className="text-[7px] md:text-[9px] font-sans font-black tracking-[0.3em] text-primary uppercase leading-none mt-1">
                 SALON
               </span>
             </div>
           </Link>
 
-          {/* Center: Pill Navigation */}
+          {/* Center: Pill Navigation (Desktop Only) */}
           <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full border border-border/50 bg-white/40 backdrop-blur-md shadow-lg shadow-black/5">
             {navItems.map((item) => (
               <Link
@@ -83,9 +83,9 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Right: Actions */}
-          <div className="flex items-center gap-4 justify-self-end">
-            <div className="flex items-center gap-2 rounded-full border border-border/50 bg-white/40 px-3 py-1.5 text-[10px] font-bold shadow-sm backdrop-blur-md">
+          {/* Right: Actions (Language Toggle) */}
+          <div className="flex items-center">
+            <div className="flex items-center gap-2 rounded-full border border-border/50 bg-white/40 px-2.5 py-1.5 md:px-3 md:py-1.5 text-[9px] md:text-[10px] font-bold shadow-sm backdrop-blur-md">
               <button 
                 onClick={() => setLanguage('id')}
                 className={cn(
