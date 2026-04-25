@@ -54,26 +54,8 @@ export default function ShopPage() {
   })
 
   return (
-    <main className="min-h-screen bg-[#fcf8f1]">
+    <main className="min-h-screen bg-[#fcf8f1] pt-28">
       <Header />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto text-center space-y-6 animate-fade-in">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 border border-primary/20 shadow-sm backdrop-blur-sm">
-            <ShoppingBag className="h-3.5 w-3.5 text-primary" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Premium Selection</span>
-          </div>
-          <h1 className="text-4xl md:text-7xl font-serif font-bold text-foreground leading-tight">
-            {t('shop_title')} <br />
-            <span className="text-primary italic font-light">{t('shop_title_highlight')}</span>
-          </h1>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {t('shop_desc')}
-          </p>
-        </div>
-      </section>
 
       {/* Filters & Search */}
       <section className="sticky top-20 z-30 bg-[#fcf8f1]/80 backdrop-blur-xl border-y border-border/40 py-6 px-6 lg:px-8 mb-12">

@@ -63,6 +63,7 @@ export function Footer() {
               {[
                 { label: t('nav_home'), href: '/' },
                 { label: t('nav_services'), href: '/layanan' },
+                { label: t('nav_shop'), href: '/shop' },
                 { label: t('nav_contact'), href: '/contact' },
                 { label: t('nav_blog'), href: '/blog' }
               ].map((link) => (

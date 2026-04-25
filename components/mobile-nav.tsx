@@ -2,17 +2,20 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, Grid, MessageSquare, BookOpen } from 'lucide-react'
+import { Home, Grid, MessageSquare, BookOpen, ShoppingBag } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '@/lib/language-context'
 
 export function MobileNav() {
   const pathname = usePathname()
+  const { t } = useLanguage()
 
   const navItems = [
-    { label: 'Beranda', href: '/', icon: Home },
-    { label: 'Layanan', href: '/layanan', icon: Grid },
-    { label: 'Kontak', href: '/contact', icon: MessageSquare },
-    { label: 'Blog', href: '/blog', icon: BookOpen },
+    { label: t('nav_home'), href: '/', icon: Home },
+    { label: t('nav_services'), href: '/layanan', icon: Grid },
+    { label: t('nav_shop'), href: '/shop', icon: ShoppingBag },
+    { label: t('nav_contact'), href: '/contact', icon: MessageSquare },
+    { label: t('nav_blog'), href: '/blog', icon: BookOpen },
   ]
 
   return (
