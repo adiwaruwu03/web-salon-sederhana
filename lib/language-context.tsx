@@ -15,8 +15,21 @@ const translations = {
     // Navbar
     nav_home: 'Beranda',
     nav_services: 'Layanan',
+    nav_shop: 'Shop',
     nav_contact: 'Kontak',
     nav_blog: 'Blog',
+    
+    // Shop
+    shop_title: 'Koleksi Produk',
+    shop_title_highlight: 'Kecantikan',
+    shop_desc: 'Temukan produk perawatan rambut dan kulit premium yang kami gunakan dan rekomendasikan di salon untuk hasil maksimal di rumah.',
+    shop_filter_all: 'Semua Produk',
+    shop_buy_wa: 'Pesan via WhatsApp',
+    shop_view_detail: 'Lihat Detail',
+    shop_out_of_stock: 'Stok Habis',
+    category_hair: 'Perawatan Rambut',
+    category_skin: 'Perawatan Kulit',
+    category_beauty: 'Produk Kecantikan',
     
     // Hero
     hero_badge: 'Luxury Salon Experience',
@@ -78,8 +91,21 @@ const translations = {
     // Navbar
     nav_home: 'Home',
     nav_services: 'Services',
+    nav_shop: 'Shop',
     nav_contact: 'Contact',
     nav_blog: 'Blog',
+
+    // Shop
+    shop_title: 'Beauty Product',
+    shop_title_highlight: 'Collection',
+    shop_desc: 'Discover premium hair and skin care products we use and recommend at the salon for maximum results at home.',
+    shop_filter_all: 'All Products',
+    shop_buy_wa: 'Order via WhatsApp',
+    shop_view_detail: 'View Detail',
+    shop_out_of_stock: 'Out of Stock',
+    category_hair: 'Hair Care',
+    category_skin: 'Skin Care',
+    category_beauty: 'Beauty Products',
     
     // Hero
     hero_badge: 'Luxury Salon Experience',
