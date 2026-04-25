@@ -77,6 +77,9 @@ export const metadata: Metadata = {
   },
 }
 
+import { MobileNav } from "@/components/mobile-nav"
+import { LanguageProvider } from "@/lib/language-context"
+
 export default function RootLayout({
   children,
 }: {
@@ -84,8 +87,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="font-sans antialiased">
-        {children}
+      <body className="font-sans antialiased pb-24 md:pb-0">
+        <LanguageProvider>
+          {children}
+          <MobileNav />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

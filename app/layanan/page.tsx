@@ -4,220 +4,166 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-
-/* ==============================
-   DATA LAYANAN (TANPA HARGA)
-============================== */
+import { useLanguage } from '@/lib/language-context'
+import { Crown, Gem, Scissors, ShieldCheck, Diamond, ArrowRight } from 'lucide-react'
 
 const services = [
   {
-    title: "Potong Rambut & Styling Rambut Tarutung",
+    title: "Hair Design & Treatment",
     slug: "potong-styling-rambut-tarutung",
-    icon: "💇‍♀️",
-    color: "from-blue-500/20 to-cyan-500/20",
-    description: "Potong rambut modern, smoothing, pewarnaan, creambath & hair spa",
-    items: [
-      { name: "Potong & Styling Rambut" },
-      { name: "Smooting / Rebonding" },
-      { name: "Pewarnaan Rambut" },
-      { name: "Ombre / Highlight" },
-      { name: "Creambath & Hair Spa" },
-    ],
+    icon: Scissors,
+    description: "Transformasi rambut Anda dengan sentuhan ahli untuk hasil yang sehat, berkilau, dan trendi.",
+    items: ["Potong & Styling", "Smoothing Premium", "Pewarnaan Ombre", "Creambath & Spa"],
+    image: "/rambut/rambut (1).jpeg"
   },
   {
-    title: "MUA Pengantin Tarutung",
+    title: "Bridal & Party Makeup",
     slug: "mua-pengantin-tarutung",
-    icon: "👰‍♀️",
-    color: "from-pink-500/20 to-rose-500/20",
-    description: "Makeup profesional untuk hari spesial Anda",
-    items: [
-      { name: "Makeup Pengantin" },
-      { name: "Makeup Lamaran" },
-      { name: "Makeup Adat Batak" },
-    ],
+    icon: Crown,
+    description: "Pancarkan aura pengantin Anda dengan riasan yang tahan lama, elegan, dan menonjolkan kecantikan alami.",
+    items: ["Makeup Pengantin", "Makeup Lamaran", "Makeup Adat Batak", "Makeup Pesta"],
+    image: "/album/Pengantin.jpg"
   },
   {
-    title: "Hairdo Wedding Tarutung",
+    title: "Exclusive Hairdo",
     slug: "hairdo-wedding-tarutung",
-    icon: "💇‍♀️",
-    color: "from-purple-500/20 to-indigo-500/20",
-    description: "Tatanan rambut elegan untuk pengantin & pesta",
-    items: [
-      { name: "Hairdo Pengantin" },
-      { name: "Hairdo Bridesmaid" },
-      { name: "Hairdo Pesta" },
-    ],
+    icon: Gem,
+    description: "Tatanan rambut artistik untuk melengkapi penampilan Anda di setiap acara istimewa.",
+    items: ["Hairdo Pengantin", "Hairdo Bridesmaid", "Hairdo Pesta", "Modern Updo"],
+    image: "/rambut/rambut (2).jpeg"
   },
   {
-    title: "Makeup Wisuda Tarutung",
+    title: "Graduation Beauty",
     slug: "makeup-wisuda-tarutung",
-    icon: "🎓",
-    color: "from-amber-500/20 to-yellow-500/20",
-    description: "Tampil memukau di hari wisudamu",
-    items: [
-      { name: "Makeup Wisuda Natural" },
-      { name: "Makeup Wisuda Full Glam" },
-    ],
+    icon: ShieldCheck,
+    description: "Tampil percaya diri dan memukau di hari kelulusan Anda dengan paket makeup & hairdo spesial.",
+    items: ["Makeup Wisuda Natural", "Makeup Wisuda Glam", "Package Hairdo", "Touch up Service"],
+    image: "/wisuda/wisudamakeup.webp"
   },
 ]
 
-/* ==============================
-   PAGE
-============================== */
-
 export default function LayananPage() {
+  const { t } = useLanguage()
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/20">
-      
-      {/* NAVBAR */}
+    <main className="min-h-screen bg-[#fcf8f1]">
       <Header />
 
-      {/* DECORATIVE HEADER */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary/5 via-transparent to-transparent pt-16 pb-8">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
-          <div className="absolute bottom-20 right-0 h-72 w-72 rounded-full bg-secondary/30 blur-3xl" />
-        </div>
+      {/* Hero Section - More Compact */}
+      <section className="pt-32 pb-16 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
         
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center mb-4">
-            <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm border border-primary/20">
-              ✨ Complete Beauty Solutions
-            </span>
+        <div className="max-w-7xl mx-auto text-center relative z-10 space-y-4 animate-fade-in">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 border border-primary/20 shadow-sm backdrop-blur-sm">
+            <Diamond className="h-3.5 w-3.5 text-primary" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{t('hero_badge')}</span>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
-            Layanan Imelda Salon
-            <span className="block text-2xl md:text-3xl text-primary mt-2 font-medium">
-              Tarutung
-            </span>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
+            {t('services_title')}
           </h1>
-          
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Solusi lengkap kecantikan dan perawatan rambut untuk setiap momen spesial Anda
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {t('services_desc')}
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-4 py-12 lg:py-16">
-        
-        {/* STATS BAR */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
-          {[
-            { label: "Layanan Profesional", value: "15+", icon: "✨" },
-            { label: "Client Puas", value: "500+", icon: "👥" },
-            { label: "Stylist Berpengalaman", value: "", icon: "💇‍♀️" },
-            { label: "Home Service", value: "Tersedia", icon: "🏠" },
-          ].map((stat, idx) => (
-            <div key={idx} className="bg-white/50 backdrop-blur-sm rounded-xl p-4 text-center border border-border/50 shadow-sm">
-              <span className="text-2xl mb-1 block">{stat.icon}</span>
-              <div className="font-bold text-primary">{stat.value}</div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+      {/* Services Grid - Minimalist & Refined */}
+      <section className="py-12 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {services.map((service, i) => (
+            <div key={i} className="group flex flex-col space-y-6 animate-fade-up">
+              {/* Smaller Square Image */}
+              <div className="relative aspect-square w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden border border-border/50 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
+                />
+              </div>
 
-        {/* GRID LAYANAN - SEMUA KOTAK SAMA RATA */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 auto-rows-fr">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-border/50 flex flex-col h-full"
-            >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              {/* Content - Flex Column dengan justify-between agar tombol selalu di bawah */}
-              <div className="relative p-6 lg:p-8 flex flex-col h-full">
+              {/* Minimalist Text Content */}
+              <div className="space-y-4 text-center px-2">
+                <div className="flex justify-center">
+                  <div className="h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+                    <service.icon size={20} />
+                  </div>
+                </div>
                 
-                {/* BAGIAN ATAS - Konten Utama */}
-                <div className="flex-1">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl lg:text-4xl">{service.icon}</span>
-                      <div>
-                        <h2 className="text-xl lg:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                          {service.title}
-                        </h2>
-                        <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground">
+                  {service.title}
+                </h3>
+                
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
 
-                  {/* Daftar Layanan - Grid 2 Kolom dengan min height konsisten */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-                    {service.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-2 p-2 rounded-lg group-hover:bg-white/50 transition-all duration-300"
-                      >
-                        <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <svg className="h-3 w-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <span className="text-sm lg:text-base text-foreground/90">
-                          {item.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap justify-center gap-1.5 py-1">
+                  {service.items.slice(0, 3).map((item, idx) => (
+                    <span key={idx} className="text-[9px] font-bold uppercase tracking-widest text-primary/60">
+                      {item} {idx < 2 && "•"}
+                    </span>
+                  ))}
                 </div>
 
-                {/* BAGIAN BAWAH - Tombol Detail (Selalu di Bawah) */}
-                <div className="mt-auto pt-4">
-                  <div className="flex justify-center">
-                    <Link href={`/layanan/${service.slug}`} className="w-full">
-                      <Button 
-                        className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white shadow-md hover:shadow-xl transition-all group/btn py-6 text-base"
-                        size="lg"
-                      >
-                        <span>Lihat Detail Layanan</span>
-                        <svg 
-                          className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* BADGE JUMLAH LAYANAN */}
-                <div className="absolute top-6 right-6">
-                  <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                    {service.items.length} Layanan
-                  </span>
+                <div className="pt-6">
+                  <Link 
+                    href={`/layanan/${service.slug}`} 
+                    className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-primary/20 text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg hover:shadow-primary/20 group"
+                  >
+                    View Details 
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* CTA SECTION */}
+      {/* CTA - Premium Redesign */}
+      <section className="pb-32 px-6">
+        <div className="max-w-5xl mx-auto relative group">
+          {/* Decorative Orbs */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl animate-pulse delay-700" />
 
+          <div className="relative z-10 rounded-[3rem] bg-foreground p-12 md:p-20 text-center space-y-10 overflow-hidden shadow-2xl shadow-primary/20">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
+            
+            <div className="space-y-4 relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                <Gem className="h-3.5 w-3.5 text-primary" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Make Your Moment Special</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
+                {t('services_cta_title')} <br />
+                <span className="text-primary italic">{t('services_cta_title_highlight')}</span>
+              </h2>
+            </div>
 
-        {/* BREADCRUMB */}
-        <div className="mt-12 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2 justify-center">
-            <span>🏠</span>
-            <Link href="/" className="hover:text-primary transition-colors">
-              Beranda
-            </Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">Layanan</span>
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link href="/contact">
+                <Button className="bg-primary text-white h-14 px-12 rounded-full text-base font-bold hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/30 group">
+                  {t('services_cta_btn')}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="h-10 w-10 rounded-full border-2 border-foreground bg-secondary flex items-center justify-center overflow-hidden">
+                    <img src={`/rambut/rambut (${i}).jpeg`} alt="Customer" className="h-full w-full object-cover" />
+                  </div>
+                ))}
+                <div className="h-10 px-4 rounded-full border-2 border-foreground bg-white/10 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white">
+                  +500 Clients
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
       <Footer />
     </main>
   )

@@ -1,79 +1,116 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
+
+import { useLanguage } from '@/lib/language-context'
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const { language, setLanguage, t } = useLanguage()
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navItems = [
-    { label: 'Beranda', href: '/' },
-    { label: 'Layanan', href: '/layanan' },
-    { label: 'Booking', href: '/booking' },
-    { label: 'Kontak', href: '/contact' },
-    { label: 'blog', href: '/blog' },
+    { label: t('nav_home'), href: '/' },
+    { label: t('nav_services'), href: '/layanan' },
+    { label: t('nav_contact'), href: '/contact' },
+    { label: t('nav_blog'), href: '/blog' },
   ]
 
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
+  }
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">IMELDA</span>
-            <span className="text-xs font-semibold text-muted-foreground">SALON</span>
+    <header 
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-500",
+        scrolled 
+          ? "bg-white/80 backdrop-blur-xl border-b border-border/50 py-3 shadow-sm" 
+          : "bg-transparent py-6"
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center">
+          
+          {/* Left: Logo */}
+          <Link href="/" className="flex items-center group justify-self-start">
+            <div className="relative w-10 h-10 transition-transform duration-500 group-hover:scale-110">
+              <Image 
+                src="/apple-icon.png" 
+                alt="Imelda Salon Logo" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="ml-3 hidden sm:flex flex-col">
+              <span className="text-lg font-serif font-bold tracking-tight text-foreground leading-none">
+                IMELDA
+              </span>
+              <span className="text-[9px] font-sans font-black tracking-[0.3em] text-primary uppercase leading-none mt-1">
+                SALON
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          {/* Center: Pill Navigation */}
+          <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full border border-border/50 bg-white/40 backdrop-blur-md shadow-lg shadow-black/5">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 font-semibold tracking-wide uppercase overflow-hidden group"
-              >
-                {/* Text */}
-                <span className="relative z-10 text-foreground group-hover:text-white transition-colors duration-300">
-                  {item.label}
-                </span>
-
-                {/* Animated Background */}
-                <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-md" />
-
-                {/* Shine Effect */}
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                  <span className="absolute top-0 left-[-100%] w-full h-full bg-white/20 skew-x-12 group-hover:left-[200%] transition-all duration-700" />
-                </span>
-              </Link>
-            ))}
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pb-4 space-y-3 border-t border-border pt-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-2 rounded-lg hover:bg-secondary text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300",
+                  isActive(item.href)
+                    ? "bg-foreground text-background shadow-md shadow-black/10"
+                    : "text-foreground/60 hover:text-primary hover:bg-white/50"
+                )}
               >
                 {item.label}
               </Link>
             ))}
+          </nav>
+
+          {/* Right: Actions */}
+          <div className="flex items-center gap-4 justify-self-end">
+            <div className="flex items-center gap-2 rounded-full border border-border/50 bg-white/40 px-3 py-1.5 text-[10px] font-bold shadow-sm backdrop-blur-md">
+              <button 
+                onClick={() => setLanguage('id')}
+                className={cn(
+                  "transition-colors",
+                  language === 'id' ? "text-foreground" : "text-muted-foreground hover:text-primary"
+                )}
+              >
+                ID
+              </button>
+              <span className="text-border">|</span>
+              <button 
+                onClick={() => setLanguage('en')}
+                className={cn(
+                  "transition-colors",
+                  language === 'en' ? "text-foreground" : "text-muted-foreground hover:text-primary"
+                )}
+              >
+                EN
+              </button>
+            </div>
           </div>
-        )}
+
+        </div>
       </div>
     </header>
   )
 }
+

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, Clock, User, ChevronRight, ArrowRight, BookOpen, Sparkles, TrendingUp } from 'lucide-react'
+import { Calendar, Clock, User, ChevronRight, BookOpen, Sparkles, TrendingUp } from 'lucide-react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 export const metadata = {
   title: 'Blog Imelda Salon - Tips Kecantikan & Makeup Tarutung',
@@ -12,171 +14,88 @@ const articles = [
   {
     title: 'Tips Hairdo Pengantin Agar Tahan Seharian',
     slug: '/blog/tips-hairdo-pengantin',
-    image: 'rambut/rambut (1).jpeg',
-    excerpt:
-      'Pelajari tips hairdo pengantin agar tetap rapi dan elegan sepanjang acara pernikahan.',
+    image: '/rambut/rambut (1).jpeg',
+    excerpt: 'Pelajari rahasia tatanan rambut pengantin yang tetap elegan dan kokoh sepanjang hari pernikahan Anda.',
     category: 'Hairdo',
     readTime: '5 menit',
     date: '15 Jan 2024',
-    author: 'Tim Imelda',
+    author: 'Melda Pasaribu',
   },
   {
-    title: 'Harga MUA Pengantin Tarutung Terbaru',
+    title: 'Panduan Memilih MUA Pengantin di Tarutung',
     slug: '/blog/harga-mua-tarutung',
-    image: 'album/Pengantin.jpg',
-    excerpt:
-      'Informasi lengkap harga jasa MUA pengantin di Tarutung beserta paketnya.',
+    image: '/album/Pengantin.jpg',
+    excerpt: 'Jangan salah pilih! Berikut adalah poin penting saat memilih makeup artist untuk hari bahagia Anda.',
     category: 'Makeup',
     readTime: '4 menit',
     date: '10 Jan 2024',
     author: 'Tim Imelda',
   },
   {
-    title: 'Inspirasi Makeup Wisuda Natural & Elegan',
+    title: 'Inspirasi Makeup Wisuda: Natural vs Glam',
     slug: '/blog/inspirasi-makeup-wisuda',
-    image: 'wisuda/wisudamakeup.webp',
-    excerpt:
-      'Rekomendasi makeup wisuda yang tahan lama dan cocok untuk sesi foto.',
+    image: '/wisuda/wisudamakeup.webp',
+    excerpt: 'Bingung memilih gaya makeup untuk wisuda? Simak perbandingan gaya natural dan glamour di sini.',
     category: 'Makeup',
     readTime: '6 menit',
     date: '5 Jan 2024',
     author: 'Tim Imelda',
   },
-  {
-    title: 'Model Rambut Wanita Trend 2026',
-    slug: '/blog/model-rambut-trend-2026',
-    image: 'potong/cut2.jpg',
-    excerpt:
-      'Inspirasi model rambut wanita terbaru yang sedang tren tahun ini.',
-    category: 'Rambut',
-    readTime: '7 menit',
-    date: '1 Jan 2024',
-    author: 'Tim Imelda',
-  },
 ]
-
-const categories = ['Semua', 'Makeup', 'Hairdo', 'Rambut', 'Tips']
 
 export default function BlogPage() {
   return (
-    <main className="bg-gradient-to-b from-background to-secondary">
-      
-      {/* HERO */}
-      <section className="relative overflow-hidden py-20 md:py-28 text-center bg-gradient-to-br from-secondary via-background to-background">
-        
-        {/* BG ORB */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-        </div>
+    <main className="min-h-screen bg-background">
+      <Header />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
-          
-          {/* BADGE */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>Inspirasi Kecantikan Terbaru</span>
+      {/* Hero Section - More Compact */}
+      <section className="pt-28 pb-16 px-6 lg:px-8 bg-secondary/30 relative">
+        <div className="max-w-7xl mx-auto text-center space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+            <Sparkles className="h-3 w-3 text-primary" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Beauty Insights</span>
           </div>
-          
-          {/* TITLE */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground text-balance animate-fade-up">
-            <span className="relative inline-block">
-              <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-70" />
-              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-gradient-animate">
-                BLOG IMELDA SALON
-              </span>
-            </span>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+            Journal <span className="text-primary italic">Kecantikan</span>
           </h1>
-          {/* DESC */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Temukan tips kecantikan, inspirasi makeup, dan tren rambut terbaru 
-            langsung dari para ahli Imelda Salon Tarutung.
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+            Inspirasi terbaru, tips perawatan, dan tren kecantikan terkini dari tim ahli Imelda Salon.
           </p>
-        </div>
-
-        {/* WAVE */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" className="w-full h-auto">
-            <path
-              fill="var(--background)"
-              d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,58.7C672,53,768,43,864,42.7C960,43,1056,53,1152,58.7C1248,64,1344,64,1392,64L1440,64L1440,120L0,120Z"
-            />
-          </svg>
         </div>
       </section>
 
-      {/* GRID */}
-      <section className="py-12 md:py-16 max-w-6xl mx-auto px-4 sm:px-6">
-        
-        <div className="flex flex-wrap items-center justify-between mb-10">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground flex items-center gap-2">
-              <BookOpen className="w-6 h-6 text-primary" />
-              Artikel Terbaru
-            </h2>
-            <p className="text-muted-foreground mt-1">
-              Temukan inspirasi untuk penampilan terbaik Anda
-            </p>
-          </div>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {articles.map((article, index) => (
-            <article
-              key={index}
-              className="group rounded-lg overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-            >
-              
-              {/* IMAGE */}
-              <Link href={article.slug} className="block relative overflow-hidden h-56">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+      {/* Featured Articles - More Proportional */}
+      <section className="py-20 px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article, i) => (
+            <article key={i} className="group space-y-5 animate-fade-up">
+              <Link href={article.slug} className="block relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl">
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
                 />
-
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 bg-card/90 backdrop-blur-sm text-primary text-xs font-semibold rounded-md border border-border">
-                    {article.category}
-                  </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[9px] font-bold uppercase tracking-widest">
+                  {article.category}
                 </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Link>
 
-              {/* CONTENT */}
-              <div className="p-6">
-                
-                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {article.date}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {article.readTime}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <User className="w-3 h-3" />
-                    {article.author}
-                  </div>
+              <div className="space-y-3 px-2">
+                <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.2em] text-primary">
+                  <span>{article.date}</span>
+                  <span className="h-1 w-1 rounded-full bg-primary" />
+                  <span>{article.readTime}</span>
                 </div>
-                
-                <h2 className="font-bold text-lg md:text-xl mb-2 line-clamp-2 text-card-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                   <Link href={article.slug}>{article.title}</Link>
-                </h2>
-                
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
                   {article.excerpt}
                 </p>
-                
-                <Link
-                  href={article.slug}
-                  className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
-                >
+                <Link href={article.slug} className="inline-flex items-center gap-2 text-primary font-bold text-xs group/link">
                   Baca Selengkapnya
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight size={14} className="transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </div>
             </article>
@@ -184,80 +103,27 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* POPULAR */}
-      <section className="py-16 bg-card border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          
-          <div className="flex items-center gap-3 mb-8">
-            <TrendingUp className="w-6 h-6 text-primary" />
-            <h2 className="text-2xl font-bold text-card-foreground">
-              Artikel Populer
-            </h2>
+      {/* Newsletter */}
+      <section className="pb-24 px-6">
+        <div className="max-w-7xl mx-auto bg-primary/10 rounded-[3rem] p-12 md:p-24 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+          <div className="space-y-4 max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">Dapatkan Update <br /><span className="text-primary italic">Tips Kecantikan</span></h2>
+            <p className="text-muted-foreground">Berlangganan buletin kami untuk mendapatkan info promo dan tips eksklusif setiap bulannya.</p>
           </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {articles.slice(0, 4).map((article, idx) => (
-              <Link
-                key={idx}
-                href={article.slug}
-                className="group flex items-center gap-3 p-3 rounded-lg hover:bg-secondary transition-colors"
-              >
-                <div className="relative w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-medium text-sm line-clamp-2 text-card-foreground group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {article.readTime}
-                  </p>
-                </div>
-              </Link>
-            ))}
+          <div className="flex w-full max-w-md gap-4">
+            <input 
+              type="email" 
+              placeholder="Email Anda" 
+              className="flex-1 h-14 px-6 rounded-full bg-white border border-border focus:ring-2 focus:ring-primary outline-none"
+            />
+            <button className="h-14 px-8 rounded-full bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+              Join
+            </button>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-20 overflow-hidden">
-        
-        <div className="absolute inset-0 bg-pink-700 from-primary to-accent opacity-90"></div>
-        
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center text-primary-foreground">
-          
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Butuh Jasa Makeup & Hairdo Profesional?
-          </h2>
-
-          <p className="text-lg text-primary-foreground/90 mb-8">
-            Tim stylist berpengalaman kami siap membuat Anda tampil memukau di setiap acara spesial.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <Link
-              href="/layanan"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-background text-primary rounded-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Lihat Layanan
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            
-            <Link
-              href="/kontak"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-background text-primary rounded-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Hubungi Kami
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </main>
   )
 }
